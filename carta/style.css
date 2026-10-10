@@ -1,0 +1,250 @@
+ @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #fff7ff;
+    background:
+        radial-gradient(circle at 15% 20%, #49306b, transparent 35%),
+        radial-gradient(circle at 85% 80%, #54245d, transparent 35%),
+        linear-gradient(135deg, #100d27, #24113c, #130f2b);
+    overflow-x: hidden;
+}
+
+.contenedor {
+    min-height: 100vh;
+    padding: 35px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portada,
+.sorpresa {
+    width: 100%;
+    max-width: 850px;
+    padding: 40px 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 220, 255, 0.25);
+    border-radius: 25px;
+    background: rgba(30, 19, 54, 0.88);
+    box-shadow: 0 0 40px rgba(207, 135, 255, 0.18);
+    animation: aparecer 0.8s ease;
+}
+
+.flores {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    margin: 15px 0 22px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.etiqueta {
+    color: #ffd879;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+}
+
+h1,
+h2 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    color: #ffe6f7;
+    line-height: 1.3;
+    text-shadow: 0 0 20px rgba(255, 171, 225, 0.3);
+}
+
+h1 {
+    font-size: clamp(2.8rem, 8vw, 4.7rem);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(2.5rem, 7vw, 3.8rem);
+    margin-bottom: 18px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.sobre {
+    width: 145px;
+    height: 100px;
+    margin: 30px auto;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffdf87, #e8a94e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    box-shadow: 0 12px 30px #0004;
+    animation: latido 2s infinite;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    padding: 13px 24px;
+    margin: 8px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #f6ca71, #f39bc9);
+    color: #35173f;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+.nota {
+    margin-top: 20px;
+    color: #d8c4ed;
+    font-size: 0.9rem;
+}
+
+.oculta {
+    display: none;
+}
+
+.introduccion {
+    margin-bottom: 20px;
+    color: #e5d5f3;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 25px 0 30px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 215, 255, 0.45);
+    box-shadow: 0 8px 25px #0005;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.04);
+}
+
+.carta {
+    padding: 30px;
+    background: #fff4ff;
+    color: #483253;
+    border-radius: 18px;
+    text-align: left;
+    line-height: 1.9;
+    box-shadow: 0 10px 35px #0003;
+}
+
+.carta p {
+    margin-bottom: 18px;
+}
+
+.firma {
+    text-align: right;
+    color: #9a4d91;
+    font-weight: 600;
+}
+
+.pregunta {
+    margin-top: 30px;
+    padding: 25px 15px;
+    border-radius: 20px;
+    background: rgba(110, 59, 131, 0.2);
+}
+
+.pregunta > p {
+    color: #ead9f5;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.boton-no {
+    background: #e5d9eb;
+    color: #483253;
+}
+
+#respuesta {
+    margin-top: 20px;
+    color: #ffd7ee;
+    font-weight: 600;
+}
+
+#musicaBtn {
+    margin-top: 25px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+@media (max-width: 600px) {
+    .portada,
+    .sorpresa {
+        padding: 28px 16px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: auto;
+        max-height: 420px;
+    }
+
+    .carta {
+        padding: 22px;
+        font-size: 0.95rem;
+    }
+}
